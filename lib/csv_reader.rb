@@ -25,7 +25,7 @@ class CSVReader
   end
 
   def read
-    CSV.foreach(@file_name, {headers: true, header_converters: :custom, converters: :custom}) do |row|
+    CSV.foreach(@file_name, {headers: true, header_converters: :custom, converters: [:custom, :integer]}) do |row|
       yield row
     end
   end
