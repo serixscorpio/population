@@ -8,11 +8,12 @@ class Analytics
 
   def supported_queries
     [
-      number_of_zipcodes: 'Number of zipcodes',
-      smallest_population: 'Smallest population (non 0)',
-      largest_population: 'Largest population',
-      number_of_zipcodes_in: 'How many zips in a state?',
-      search_zipcode: 'Information for a given zip'
+      {index: 1, method: :number_of_zipcodes, name: 'Number of zipcodes'},
+      {index: 2, method: :smallest_population, name: 'Smallest population (non 0)'},
+      {index: 3, method: :largest_population, name: 'Largest population'},
+      {index: 4, method: :number_of_zipcodes_in, name: 'How many zips in a state?', argument: {name: 'state', type: String}},
+      {index: 5, method: :search_zipcode, name: 'Information for a given zip', argument: {name: 'zip', type: Integer}},
+      {index: 6, method: :exit, name: 'Exit'}
     ]
   end 
 
